@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sole Ties</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <a href="#products-section" class="nav-link">Products</a>
+      <a href="#add-edit-section" class="nav-link">Add Product</a>
+      <a href="#shopped-section" class="nav-link">Shopped Items</a>
+      <a href="#about-section" class="nav-link">About</a>
+      <button id="cart-btn" aria-label="View cart" class="cart-nav-btn">
+        🛒 Cart (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Sole Ties</h1>
+    <p>Where shoes meet TLC, creating a cozy haven for your favorite pairs</p>
+  </header>
+
+  <main>
+    <!-- Products Section -->
+    <section id="products-section">
+      <div class="products-header">
+        <h2>Available Shoes</h2>
+        <button id="show-add-form">Add a new product</button>
+      </div>
+      <div id="product-list" class="products-grid"></div>
+    </section>
+
+    <!-- Add/Edit Section -->
+    <section id="add-edit-section" class="hidden">
+      <h2 id="form-title">Add New Product</h2>
+      <form id="product-form">
+        <input name="name" placeholder="Product Name" required />
+        <input name="price" placeholder="Price" type="number" min="0" required />
+        <input name="size" placeholder="Size" required />
+        <input name="condition" placeholder="Condition (e.g., Like New, Used)" required />
+        <input name="image" placeholder="Image URL" required />
+        <button type="submit" id="save-btn">Add Product</button>
+        <button type="button" id="cancel-edit" class="hidden">Cancel</button>
+      </form>
+    </section>
+
+    <!-- Shopped Items Section -->
+    <section id="shopped-section" class="hidden">
+      <h2>Shopped Items</h2>
+      <div id="shopped-list" class="products-grid"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section">
+      <h2>About Sole Ties</h2>
+      <p>
+        Sole Ties is your go-to digital thrift shop for unique, pre-loved sneakers and shoes. Shop sustainably,
+        stylishly, and affordably.
+      </p>
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
+        alt="Sneaker display">
+      <div class="social-links">
+        <a href="https://tiktok.com/@yourusername" target="_blank" aria-label="TikTok">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tiktok.svg" alt="TikTok" class="social-icon">
+        </a>
+        <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram"
+            class="social-icon">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Message Popup -->
+  <div id="message" class="hidden"></div>
+
+  <!-- Cart Sidebar -->
+  <aside id="cart-sidebar" class="hidden" aria-label="Shopping cart">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="cart-total"></p>
+      <button id="close-cart" aria-label="Close cart">Close</button>
+    </div>
+  </aside>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
